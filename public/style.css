@@ -1,0 +1,60 @@
+body {
+  font-family: arial, sans-serif;
+  font-size: 24px;
+  padding:5% 20%;
+}
+
+.fieldset{
+  margin: 20px 0;
+}
+.budget{
+  margin-top: 40px;
+  width: 220px;
+}
+
+.btn{
+  margin: 10px auto;
+  width: 120px;
+  height: 50px;
+}
+
+.list{
+  margin-top: 30px;
+}
+
+.rows{
+  padding: 10px;
+  border: 2px solid grey;
+  border-radius: 5px;
+  margin:20px 0;
+}
+
+.airport{
+  width: 40px;
+}
+
+.prices{
+  float:left;
+}
+.location{
+  float:right;
+}
+.search-locations{
+  border-radius: 5px;
+  margin: 0 50px;
+  height:50px;
+  width: 50%;
+}
+
+
+/*Disable arrow keys on input number (budget form)*/
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/*Disable arrow keys on calender form*/
+input::-webkit-inner-spin-button{
+    display: none;
+}

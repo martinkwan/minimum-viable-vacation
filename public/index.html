@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang "en" ng-app ="app">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <title> Minimum Viable Vacation </title>
+  </head>
+  <body ng-controller = "MainController">
+    <h1>Minimum Viable Vacation</h1>
+    <div>
+      <form ng-submit ='getData()' name = 'flightForm' novalidate>
+        <div class="input-group budget">
+          <div class="input-group-addon">$</div>
+            <input ng-model="budget" type="number" placeholder="Enter Budget Here" class="form-control" required/>
+          <div class="input-group-addon">.00</div>
+        </div>
+        <fieldset class = "fieldset">
+          <legend>Vacation Dates</legend>
+        <label>
+          Departing
+          <input class ='date leave-date' ng-model = "leaveDate" type="date" class="form-control" required/>
+        </label>
+        <label>
+          from
+          <input ng-minlength="3" class ="airport" ng-model="airport" type="text" maxlength="3" ng-init="airport = 'SFO'"/>
+        </label>
+        <label>
+          Returning
+          <input class ='date return-date' ng-model = "returnDate" type="date" class="form-control" ng-click = "anytime = null"/>
+        </label>
+        <input ng-model = "anytime" type="radio" value ="true" ng-click = "returnDate = null"/> One way ticket
+      </fieldset>
+      <button class ="btn btn-primary" type="submit" ng-disabled="flightForm.$invalid">Search Flights</button
+      </form>
+      <span >
+        <input class = "search-locations" ng-model="searchCriteria" ng-init="searchCriteria=''" type="text" placeholder="Search location"/>
+      </span>
+    </div>
+    <!-- the ng-view directive is where our templates will be loaded into when navigated to -->
+    <h4 ng-if="dataLoading">Loading.......</h4>
+
+    <h4 ng-if ="noResults">
+      No results found
+    </h4>
+    <div class ="list">
+        <div ng-repeat="flight in data.flights | orderBy: '-price' | filter:filterLocation ">
+          <div class="rows clearfix">
+            <span class="prices">
+              ${{flight.price}}
+            </span>
+            <span class="location">
+              {{flight.city}},  {{flight.country}}
+            </span>
+            </div>
+        </div>
+        </div>
+      </ul>
+    </div>
+    <script src="lib/jquery-3.1.0.js"></script>
+    <script src="lib/angular.js"></script>
+    <script src="app/app.js"></script>
+    <script src ="index.js"></script>
+  </body>
+</html>

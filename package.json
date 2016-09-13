@@ -1,0 +1,26 @@
+{
+  "name": "MKS-SF-mvp",
+  "version": "1.0.0",
+  "description": "### Overview:",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/martinkwan/MKS-SF-mvp.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.4.5",
+    "path": "^0.12.7",
+    "request": "^2.74.0"
+  },
+  "bugs": {
+    "url": "https://github.com/martinkwan/MKS-SF-mvp/issues"
+  },
+  "homepage": "https://github.com/martinkwan/MKS-SF-mvp#readme"
+}
