@@ -9,7 +9,6 @@ var fs = require('fs');
 
 http.createServer(function(req, res) {
   var path = url.parse(req.url, true).pathname;
-  console.log(req.method);
   if(req.method === 'GET') {
     if(path === '/skyscanner') {
       var params = url.parse(req.url, true).query;
@@ -32,6 +31,9 @@ http.createServer(function(req, res) {
     } else if(path === '/style.css'){
       res.writeHead(200,{'Content-Type':'text/css'});
       fs.createReadStream(`${__dirname}/public/style.css`).pipe(res);
+    } else if (path === '/favicon.ico') {
+      res.writeHead(404);
+      res.end();
     } else {
       // Here the only files we have left in public are javascript,
       // and the path variable contains the proper route after /public
