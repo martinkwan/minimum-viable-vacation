@@ -14,12 +14,12 @@ angular.module('app', [])
     $scope.noResults = false;
     Main.retrieve($scope.leaveDate, $scope.returnDate, $scope.anytime,$scope.airport)
     .then(function(response){
-      if(response === "error"){
+      $scope.dataLoading=false;
+      if(response.data === "error"){
         $scope.noResults = true;
         return;
       }
       $scope.data.flights = [];
-      $scope.dataLoading=false;
       for(var i = 0;i < response.data.Quotes.length;i++){
         var price = response.data.Quotes[i].MinPrice;
         var destinationId = response.data.Quotes[i].OutboundLeg.DestinationId;

@@ -20,7 +20,7 @@ app.get('/skyscanner', function(req, res){
   var leaveDate = (req.query.leave).slice(0,10);
   var returnDate = req.query.anytime !== "true" ? (req.query.return).slice(0,10): "";
   var airport = req.query.airport;
-  var url = 'http://api.skyscanner.net/apiservices/browsequotes/v1.0/US/USD/en-US/'+airport+'/anywhere/'+leaveDate+'/' +returnDate+'?apikey=ma883234862726692043253436706997';
+  var url = 'http://api.skyscanner.net/apiservices/browsequotes/v1.0/US/USD/en-US/'+airport+'/anywhere/'+leaveDate+'/' +returnDate+'?apikey=ma602590217972886030597213906172';
   request(url,function(error,response,body){
     if(!error && response.statusCode == 200){
       console.log("Got something from api to server");

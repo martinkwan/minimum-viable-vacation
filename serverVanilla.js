@@ -15,7 +15,7 @@ http.createServer(function(req, res) {
       var leaveDate = params.leave.slice(0,10);
       var returnDate = params.anytime !== "true" ? (params.return).slice(0,10): "";
       var airport = params.airport;
-      var apiCall = `http://api.skyscanner.net/apiservices/browsequotes/v1.0/US/USD/en-US/${airport}/anywhere/${leaveDate}/${returnDate}?apikey=ma883234862726692043253436706997`;
+      var apiCall = `http://api.skyscanner.net/apiservices/browsequotes/v1.0/US/USD/en-US/${airport}/anywhere/${leaveDate}/${returnDate}?apikey=ma602590217972886030597213906172`;
       request(apiCall,function(error,response,body){
         if(!error && response.statusCode == 200){
           res.writeHead(200,{'Content-Type':'application/json'})
@@ -39,7 +39,7 @@ http.createServer(function(req, res) {
       // and the path variable contains the proper route after /public
       res.writeHead(200,{'Content-Type':'text/javascript'});
       fs.createReadStream(`${__dirname}/public${path}`).pipe(res);
-    } 
+    }
   }
   //We don't have anymore request types, they are all GET requests
 }).listen(3030, '127.0.0.1');
