@@ -43,7 +43,7 @@
     <h4 ng-if ="noResults">
       No results found
     </h4>
-    <div class ="list">
+    <div ng-hide="noResults" class ="list">
         <div ng-repeat="flight in data.flights | orderBy: '-price' | filter:filterLocation ">
           <div class="rows clearfix">
             <span class="prices">

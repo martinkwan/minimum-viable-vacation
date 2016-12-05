@@ -1,6 +1,6 @@
 # Minimum Viable Vacation
 
-A web application to find the cheapest destination you can fly to given a budget
+A web application to find the cheapest destination you can fly to, given a budget
 <!-- ![Alt text](screenShot.png "") -->
 
 ## Installation
@@ -14,9 +14,9 @@ A web application to find the cheapest destination you can fly to given a budget
 - Enter a flight budget
 - Select departure date
 - Select departure airport
-- Select return date or if it is a one way ticket
-- Click search flights
-- Search results with search bar
+- Select one way ticket if it is one way, else select return date
+- Click search flights to search flights with prices less than budget
+- Search destination results with search bar
 
 ## License
 
